@@ -15,7 +15,7 @@ public class ConexaoMysql implements ConexaoJdbc{
     private String driver = "com.mysql.cj.jdbc.Driver";
     // caminho onde o banco esta fisicamente
     private static final String DATABASE_URL =
-            "jdbc:mysql://172.17.0.2:3306/agenda?useTimezone=true&serverTimezone=UTC";
+            "jdbc:mysql://127.0.0.1:3306/agenda?useTimezone=true&serverTimezone=UTC";
 
     // usuario do banco
     private static final String USERNAME = "root";
