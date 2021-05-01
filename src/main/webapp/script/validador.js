@@ -1,4 +1,4 @@
-function validar() {
+ function validar() {
     let nome = frmContato.nome.value;
     let fone = frmContato.fone.value;
 
