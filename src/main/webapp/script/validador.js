@@ -13,3 +13,4 @@ function validar() {
     } else {
         document.forms["frmContato"].submit();
     }
+}
