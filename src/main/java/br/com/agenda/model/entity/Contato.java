@@ -1,4 +1,4 @@
-package br.com.agenda.model;
+package br.com.agenda.model.entity;
 
 public class Contato {
 	 private int id ;
