@@ -80,9 +80,16 @@ public class ContatoDao implements BaseDao<Contato,Long>{
 	}
 
 	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Long id) throws SQLException {
+		statement = "DELETE FROM contato WHERE id = ?";
+        try (PreparedStatement preparedStatement = this.conexao.getConnection().prepareStatement(statement)) {
+            preparedStatement.setLong(1, id);
+            this.conexao.commit();
+        } catch (SQLException e) {
+            this.conexao.rollback();
+            throw e;
+        }
+
 	}
 
 }

@@ -17,5 +17,5 @@ void create(T entity) throws SQLException;
 
     void update(T entity);
 
-    void delete(ID id);
+    void delete(ID id)throws SQLException;
 }
