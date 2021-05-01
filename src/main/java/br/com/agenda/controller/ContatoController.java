@@ -1,7 +1,12 @@
 package br.com.agenda.controller;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +37,16 @@ public class ContatoController extends HttpServlet {
     }
 
     protected void listaContatos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	List<Contato> contatoList = new ArrayList<>();
+
+        try {            
+			contatoList = contratoDao.findAll();
+            request.setAttribute("contatos", contatoList);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("agenda.jsp");
+            dispatcher.forward(request, response);
+        } catch (SQLException exception) {
+            Logger.getLogger(ContatoController.class.getName()).log(Level.SEVERE, null, exception);
+        }
         response.sendRedirect("agenda.jsp");
     }
 
