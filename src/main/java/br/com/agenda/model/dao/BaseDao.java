@@ -8,14 +8,14 @@ import java.util.List;
  */
 public interface BaseDao<T, ID> {
 
-    void create(T entity) throws SQLException;
+
+void create(T entity) throws SQLException;
 
     List<T> findAll() throws SQLException;
 
-    T findById(ID id);
+    T findById(ID id) throws SQLException;
 
     void update(T entity);
 
     void delete(ID id);
-
 }
